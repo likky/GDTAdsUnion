@@ -1,0 +1,14 @@
+﻿<metadata>
+  <!--
+  This sample removes the class: android.support.v4.content.AsyncTaskLoader.LoadTask:
+  <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='AsyncTaskLoader.LoadTask']" />
+  
+  This sample removes the method: android.support.v4.content.CursorLoader.loadInBackground:
+  <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='CursorLoader']/method[@name='loadInBackground']" />
+  -->
+  
+  <attr path="/api/package[@name='com.qq.e.comm.util']/class[@name='FileUtil']/method[@name='tryClose' and count(parameter)=1 and parameter[1][@type='java.io.OutputStream']]" name="name">tryClose2</attr>
+  <!--删除视频广告接口，横幅和插页广告不需要。-->
+  <remove-node path="/api/package[@name='com.qq.e.ads.nativ']/interface[@name='NativeExpressMediaListener']" />
+  <!--<remove-node path="/api/package[@name='com.qq.e.ads.nativ']/interface[@name='NativeExpressMediaListener']/class[@name='VideoErrorEventArgs']" />-->
+</metadata>

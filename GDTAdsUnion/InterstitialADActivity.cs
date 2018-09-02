@@ -15,58 +15,14 @@ using Com.QQ.E.Comm.Util;
 
 namespace GDTAdsUnion
 {
-    [Activity(Label = "GDTAdsUnion", MainLauncher = true)]
-    public class InterstitialADActivity : Activity,IInterstitialADListener
+    [Activity(Label = "GDTAdsUnion")]
+    public class InterstitialADActivity : Activity
     {
-        InterstitialAD interstitialAD;
-        string posId;
+        public static InterstitialAD interstitialAD;
         string InterteristalPosID= "8575134060152130849";
         string APPID = "1101152570";
         bool isButton1;
 
-        public void OnADClicked()
-        {
-          
-        }
-
-        public void OnADClosed()
-        {
-       
-        }
-
-        public void OnADExposure()
-        {
-       
-        }
-
-        public void OnADLeftApplication()
-        {
-     
-        }
-
-        public void OnADOpened()
-        {
-          
-        }
-
-        public void OnADReceive()
-        {
-            Log.Info("AD_DEMO", "ONBannerReceive");
-            if (isButton1 == true)
-            {
-                interstitialAD.Show();
-            }
-            else
-            {
-                interstitialAD.ShowAsPopupWindow();
-            }
-
-        }
-
-        public void OnNoAD(AdError p0)
-        {
-        
-        }
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -80,14 +36,14 @@ namespace GDTAdsUnion
             button1.Click += delegate
             {
                 isButton1 = true;
-                GetAD().SetADListener(this);
+                GetAD().SetADListener(new InterstitialListener());
                 interstitialAD.LoadAD();
             };
 
             button2.Click += delegate
             {
                 isButton1 = false;
-                GetAD().SetADListener(this);
+                GetAD().SetADListener(new InterstitialListener());
                 interstitialAD.LoadAD();
             };
 

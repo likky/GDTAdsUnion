@@ -1,14 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.qq.e.union.demo" android:versionCode="1" android:versionName="1.0" android:installLocation="auto">
 	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="26" />
-	<application android:allowBackup="true" android:label="@string/app_name"></application>
-	<uses-permission android:name="android.permission.INTERNET" />
-	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
-	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<application android:allowBackup="true" 
+               android:label="@string/app_name" 
+               android:theme="@style/AppTheme" 
+               android:icon="@mipmap/ic_launcher">
 	<!--<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />-->
 	<!-- 如果需要精确定位的话请加上此权限 -->
 	<!-- 必须声明SDK所需要的组件 -->
@@ -19,4 +15,13 @@
 	<provider android:name="android.support.v4.content.FileProvider" android:authorities="com.qq.e.union.demo.fileprovider" android:exported="false" android:grantUriPermissions="true">
 		<meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/gdt_file_path" />
 	</provider>
+  </application>
+
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+  <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 </manifest>

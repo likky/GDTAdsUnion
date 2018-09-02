@@ -50,4 +50,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </LinearLayout>
+  <LinearLayout
+    android:id="@+id/interstitialContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/posIdContainer"
+    android:layout_marginTop="10dp"
+    android:orientation="horizontal">
+  <Button
+    android:id="@+id/interstitial"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="进入插页广告页面" />
+  </LinearLayout>
 </RelativeLayout>

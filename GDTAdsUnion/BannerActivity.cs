@@ -11,10 +11,11 @@ using Android.Webkit;
 
 namespace GDTAdsUnion
 {
-    [Activity(Label = "GDTAdsUnion", MainLauncher = true,WindowSoftInputMode = SoftInput.StateHidden|SoftInput.StateAlwaysHidden)]
+    [Activity(Label = "GDTAdsUnion", WindowSoftInputMode = SoftInput.StateHidden|SoftInput.StateAlwaysHidden)]
     public class BannerActivity : Activity,IBannerADListener
     {
-        private ViewGroup bannerContainer;
+        //private ViewGroup bannerContainer;
+        FrameLayout bannerContainer;
         private BannerView bannerView;
         private string posId;
         public static readonly string APPID = "1101152570";
@@ -32,7 +33,7 @@ namespace GDTAdsUnion
             {
                 WebView.SetWebContentsDebuggingEnabled(true);
             }
-                bannerContainer = this.FindViewById<ViewGroup>(Resource.Id.bannerContainer);
+                bannerContainer = this.FindViewById<FrameLayout>(Resource.Id.bannerContainer);
             FindViewById<EditText>(Resource.Id.posId).Text = BannerPosID;
             var button1= FindViewById(Resource.Id.refreshBanner) as Button;
             var button2 = FindViewById(Resource.Id.closeBanner) as Button;
@@ -118,11 +119,12 @@ namespace GDTAdsUnion
         public void OnADReceiv()
         {
             Log.Info("AD_DEMO", "ONBannerReceive");
+            Toast.MakeText(this, "收到广告", ToastLength.Short).Show();
         }
 
         public void OnNoAD(AdError p0)
         {
-
+            Toast.MakeText(this, "没有广告", ToastLength.Short).Show();
         }
     }
 }
